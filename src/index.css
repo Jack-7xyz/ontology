@@ -1,0 +1,191 @@
+/* Ontology Retail — global styles. Brand tokens mirrored as CSS vars. */
+
+:root {
+  --c-purple: #17456A;
+  --c-purple-dark: #010101;
+  --c-teal: #86C6CA;
+  --c-yellow: #F5C542;
+  --c-dark: #222222;
+  --c-dark-mid: #2D3437;
+  --c-light-bg: #222222;
+  --c-panel: #010101;
+  --c-panel-2: #171A1C;
+  --c-panel-3: #22272A;
+  --c-surface: #171A1C;
+  --c-border: #334047;
+  --c-muted: #A7B0B4;
+  --c-neutral-dark: #010101;
+  --c-table-cell: #151B1E;
+  --c-table-cell-alt: #1C2528;
+  --c-table-head: #2E3D43;
+  --c-white: #FFFFFF;
+  --c-gray: #A7B0B4;
+
+  --c-flag-green: #4CCB7F;
+  --c-flag-yellow: #F5C542;
+  --c-flag-red: #E04B4B;
+
+  /* Ontology Data Lineage Tiers — exact hex from BI canon (Raw / Tab+ Derived / BI Derived) */
+  --c-tier-raw: #334047;
+  --c-tier-tab-derived: #17456A;
+  --c-tier-bi-derived: #1F6B73;
+
+  --topbar-h: 56px;
+  --leftnav-w: 220px;
+  --leftnav-w-collapsed: 64px;
+  --rightpanel-w: 320px;
+  --rightpanel-w-closed: 32px;
+
+  /* 5-tier ontology palette. */
+  --c-tier-utility: #A8EEDB;
+  --c-tier-mechanics: #6DD6B4;
+  --c-tier-bi: #3FB894;
+  --c-tier-plus: #86C6CA;
+  --c-tier-source: #17456A;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  color: var(--c-white);
+  background: var(--c-light-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--c-light-bg);
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: var(--left-w) minmax(0, 1fr) var(--right-w);
+  flex: 1;
+  min-height: 0;
+  transition: grid-template-columns 160ms ease;
+}
+
+.app-left,
+.app-right,
+.app-main {
+  min-width: 0;
+  min-height: 0;
+}
+
+.app-left,
+.app-right {
+  background: var(--c-panel);
+  align-self: stretch;
+}
+
+.app-left > nav,
+.app-right > aside {
+  min-height: 100%;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 30% 0%, rgba(134, 198, 202, 0.08), transparent 34rem),
+    var(--c-dark);
+}
+
+table {
+  color: var(--c-white);
+}
+
+tbody tr:hover {
+  background: rgba(134, 198, 202, 0.08) !important;
+}
+
+input,
+textarea,
+select {
+  color-scheme: dark;
+  background: var(--c-panel);
+  color: var(--c-white);
+  border-color: var(--c-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--c-muted);
+  opacity: 0.8;
+}
+
+.topbar {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.topbar img {
+  flex: 0 0 auto;
+}
+
+.topbar-title,
+.topbar-meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --topbar-h: 56px;
+  }
+
+  .app-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-left,
+  .app-right {
+    display: none;
+  }
+
+  .app-main {
+    padding: 16px;
+  }
+
+  .topbar {
+    padding: 0 12px !important;
+    gap: 10px !important;
+  }
+
+  .topbar img {
+    max-width: 118px;
+  }
+
+  .topbar-title {
+    font-size: 14px !important;
+  }
+
+  .topbar-meta {
+    display: none;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--c-white);
+}
+
+button:disabled {
+  background: #151B1E !important;
+  border-color: var(--c-border) !important;
+  color: #8EA0A7 !important;
+  cursor: not-allowed !important;
+  opacity: 1;
+}
