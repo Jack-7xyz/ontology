@@ -1490,8 +1490,7 @@ function MechNodeBody({ id, onNavigate }: { id: string; onNavigate: (v: View) =>
   // Mechanic page is the primary surface — backend META is the source of truth
   // for utility / logic / insights / algorithms / weaknesses. RightPanel only
   // shows the lineage breadcrumb + cross-BI improvements aggregation.
-  // `red_count` ships in Phase 1; the rest enable in Phases 2-6.
-  const pageShipped = id === 'red_count';
+  const pageShipped = true;
   return (
     <div>
       <h3 style={H3}>{m.label}</h3>

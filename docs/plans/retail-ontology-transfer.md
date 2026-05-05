@@ -40,4 +40,4 @@ The implementation is not complete until the repository contains no instances of
 - Public app identity is `Ontology`.
 - The first pass can assume backend/data contracts will be renamed to match the frontend ontology terms.
 - Backend migration is out of this first implementation unless explicitly added later.
-- The source frontend is the previously explored Vite app at `r3-app/frontend` in the legacy project. The exact parent path is intentionally not written here because it contains the forbidden token.
+- The source frontend was the previously explored Vite app in the legacy project. The exact parent path is intentionally not written here because it contains the forbidden token.

@@ -134,7 +134,7 @@ export interface MechanicImprovements {
 }
 
 // Mechanics layer — single-number-story per store, composed from BI dashboards.
-// Backend source: r3-app/backend/app/mechanics/<id>.py META + compute().
+// Backend source: /api/mechanics/<id> META + compute response.
 
 export interface MechanicAlgorithmRow {
   domain: string;

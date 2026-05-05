@@ -253,9 +253,7 @@ export function Lineage({ onNavigate, selected, onSelectNode }: Props) {
             const fill = nodeFill(n.layer, lit, isSel);
             const stroke = nodeStroke(n.layer, lit, isSel);
             const text = lit || !selected ? 'var(--c-white)' : 'var(--c-gray)';
-            // Mech nodes become interactive once the corresponding backend
-            // mechanic ships (Phase 1+ for red_count, Phases 2-6 for the rest).
-            const mechShipped = n.layer === 'mech' && n.id === 'red_count';
+            const mechShipped = n.layer === 'mech';
             const isInteractive =
               n.layer === 'source' || n.layer === 'plus' || n.layer === 'bi' || mechShipped;
             return (

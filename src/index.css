@@ -60,6 +60,117 @@ html, body, #root {
   background: var(--c-light-bg);
 }
 
+a {
+  color: inherit;
+}
+
+.project-index {
+  min-height: 100vh;
+  padding: 40px;
+  background:
+    linear-gradient(180deg, rgba(134, 198, 202, 0.08), transparent 320px),
+    var(--c-dark);
+  color: var(--c-white);
+}
+
+.project-index__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 1120px;
+  margin: 0 auto 32px;
+}
+
+.project-index__logo {
+  width: 154px;
+  max-width: 42vw;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.project-index__eyebrow {
+  margin: 0 0 6px;
+  color: var(--c-teal);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.project-index h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 22px;
+  border: 1px solid color-mix(in srgb, var(--project-accent) 42%, var(--c-border));
+  border-radius: 8px;
+  background: var(--c-panel-2);
+  text-decoration: none;
+  transition: border-color 140ms ease, transform 140ms ease, background 140ms ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: var(--project-accent);
+  background: var(--c-panel-3);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.project-card__domain {
+  color: var(--project-accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.project-card h2 {
+  margin: 16px 0 10px;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+.project-card__status {
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--c-white);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-index--not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
+}
+
+.project-index__home-link {
+  color: var(--c-teal);
+  font-weight: 700;
+}
+
 .app-shell {
   display: flex;
   flex-direction: column;
@@ -156,6 +267,21 @@ textarea::placeholder {
 
   .app-main {
     padding: 16px;
+  }
+
+  .project-index {
+    padding: 24px 16px;
+  }
+
+  .project-index__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .project-index h1 {
+    font-size: 28px;
   }
 
   .topbar {
