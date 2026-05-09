@@ -38,6 +38,10 @@ def health() -> dict:
 def spa_shell(full_path: str):
     if full_path.startswith("api/"):
         raise HTTPException(status_code=404, detail="Not Found")
+    if full_path:
+        candidate = (FRONTEND_DIST / full_path).resolve()
+        if FRONTEND_DIST.resolve() in candidate.parents and candidate.is_file():
+            return FileResponse(candidate)
     index_file = FRONTEND_DIST / "index.html"
     if not index_file.exists():
         raise HTTPException(status_code=503, detail="Frontend build not found")

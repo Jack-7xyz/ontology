@@ -28,3 +28,4 @@ docs/branding/local-assets/
 *.njsproj
 *.sln
 *.sw?
+.vercel
